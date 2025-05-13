@@ -43,7 +43,7 @@ const Checkout = () => {
   const config = {
     reference: new Date().getTime().toString(),
     email: customer?.email,
-    currency: curr,
+    currency: 'GHs',
     amount: Number(grand_total), //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
     publicKey: 'pk_test_4589bf9fa76134b0892747bf3cc7edec56a72017',
   };

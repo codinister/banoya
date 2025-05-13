@@ -7,7 +7,7 @@ import Footer from '@/components/footer/Footer';
 import Currency from '@/components/Currency';
 
 export const metadata: Metadata = {
-  title: 'NAK COLLECTIONS',
+  title: 'BANOYA COUTURE',
   description: 'African ware',
 };
 

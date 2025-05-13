@@ -78,7 +78,7 @@ const Nav = () => {
                 <Image
                   src={cont[0]?.comp_logo}
                   alt="logo"
-                  width="70"
+                  width="250"
                   height="70"
                 />
               </Link>
