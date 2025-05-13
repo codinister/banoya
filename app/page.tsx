@@ -1,95 +1,127 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
+
+import Slider from '../components/Slider';
+import useGetQuery from '@/data/query/useGetQuery';
+import { useEffect, useState } from 'react';
+import Card from '@/components/card/Card';
+import { ItemTypes } from '@/@types/types';
+import { GiCargoShip } from 'react-icons/gi';
+import { MdOutlineSecurity } from 'react-icons/md';
+import { MdOutlinePayment } from 'react-icons/md';
+import { FaRegClock } from 'react-icons/fa';
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [getHeight, setHeight] = useState('100vh');
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+  useEffect(() => {
+    const size = window.innerWidth;
+    if (size < 769) {
+      setHeight('60vh');
+    }
+  }, []);
+
+  const data = useGetQuery('slider', '/slider') || [];
+
+  const item: ItemTypes = useGetQuery('item', '/item') || [];
+
+  const bestselling: ItemTypes =
+    useGetQuery('bestselling', '/bestselling') || [];
+
+  const titles = Object.values(bestselling).map((v) => v.title);
+  const filta = Object.values(item)
+    .filter((v) => !titles.includes(v.title))
+    .slice(0, 20);
+
+  return (
+    <>
+      <section>
+        {data.length > 0 ? (
+          <Slider data={data} width="100%" height={getHeight} />
+        ) : (
+          ''
+        )}
+      </section>
+      <section className="home">
+        <div className="container item-wrapper">
+          <h2>Trending & Best Selling</h2>
+
+          <div>
+            {bestselling.map((v, k: number) => (
+              <Card
+                key={k}
+                id={v.id}
+                title={v.title}
+                img={v.image}
+                link={`/single/${v.id}`}
+                price={v.price}
+              />
+            ))}
+          </div>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      <section className="collections">
+        <div className="container">
+          <h2>Popular Collections</h2>
+
+          <div>
+            {filta.map((v, k: number) => (
+              <Card
+                key={k}
+                id={v.id}
+                title={v.title}
+                img={v.image}
+                link={`/single/${v.id}`}
+                price={v.price}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="services">
+        <div className="container">
+          <div>
+            <div>
+              <GiCargoShip />
+            </div>
+            <div>
+              <strong>Worldwide Delivery</strong>
+              <p>We ship to anywhere in the world</p>
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <MdOutlineSecurity />
+            </div>
+            <div>
+              <strong>Secure SSL</strong>
+              <p>256-Bit Payment Protection</p>
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <MdOutlinePayment />
+            </div>
+            <div>
+              <strong>Paypal/Credit Card/Mobile money</strong>
+              <p>Pay with Multiple options</p>
+            </div>
+          </div>
+
+          <div>
+            <div>
+              <FaRegClock />
+            </div>
+            <div>
+              <strong>24/7 Support</strong>
+              <p>Our support team is always available</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

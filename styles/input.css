@@ -1,0 +1,120 @@
+.form-control {
+  & > label {
+    margin-bottom: 1.6rem;
+  }
+  margin-bottom: 2.4rem;
+  .multiple-input {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3.2rem;
+
+    & > div {
+      flex: 10rem 1 1;
+    }
+  }
+
+  .ferror {
+    border: solid 0.1rem red !important;
+  }
+  .form-input.error {
+    border: solid 0.1rem red !important;
+  }
+
+  .form-input {
+    padding: 1.2rem;
+    border: solid 0.1rem white;
+    position: relative;
+    &:has(> input:focus) {
+      border: solid 0.1rem #444;
+    }
+    &:has(> input:not(:focus)) {
+      border-bottom: solid 0.1rem #ccc;
+    }
+    & > label {
+      display: block;
+      position: absolute;
+      left: 1.6rem;
+      top: 1.6rem;
+      transition: 0.2s;
+    }
+
+    & > input:not(:placeholder-shown) + label {
+      position: absolute;
+      top: 0.1rem;
+      left: 1.2rem;
+      font-size: 1.2rem;
+      transition: 0.2s;
+    }
+    & > input {
+      outline: none;
+      border: none;
+      width: 100%;
+      padding-top: 0;
+      margin-top: 1rem;
+    }
+  }
+}
+
+.select-control {
+  margin-bottom: 2.4rem;
+  & > label {
+    margin-bottom: 1.6rem;
+  }
+  .select-input {
+    padding: 1.2rem;
+    border: solid 0.1rem white;
+    position: relative;
+    &:has(> select:focus) {
+      border: solid 0.1rem #444;
+    }
+    &:has(> select:not(:focus)) {
+      border-bottom: solid 0.1rem #ccc;
+    }
+    & > label {
+      display: block;
+      position: absolute;
+      left: 1.6rem;
+      top: 1.6rem;
+      transition: 0.2s;
+    }
+
+    & > select:not(:placeholder-shown) + label {
+      position: absolute;
+      top: 0.1rem;
+      left: 1.2rem;
+      font-size: 1.2rem;
+      transition: 0.2s;
+    }
+    & > select {
+      outline: none;
+      border: none;
+      width: 100%;
+      padding-top: 0;
+      margin-top: 1rem;
+    }
+  }
+}
+
+.terms-of-service {
+  color: #777;
+  margin-top: 1.6rem;
+  a {
+    color: #777;
+  }
+}
+
+.pay-btn {
+  background-color: #444;
+  color: white;
+  text-align: center;
+  padding: 1.6rem;
+  display: block;
+  width: 100%;
+  border: solid 0.1rem white;
+  cursor: pointer;
+  &:hover {
+    background-color: white;
+    color: #444;
+    border: solid 0.1rem #444;
+  }
+}

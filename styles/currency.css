@@ -1,0 +1,25 @@
+.currency {
+  position: fixed;
+  top: 50%;
+  right: -20rem;
+  width: 25rem;
+  transform: translateY(-50%);
+  background-color: #333;
+  padding: 0.8rem;
+  color: white;
+  z-index: 9999;
+  cursor: pointer;
+  transition: 0.5s;
+  &:hover {
+    right: 0;
+  }
+  ul{
+    display: flex; 
+    gap: 1.2rem;
+    & > li{
+      flex:  1 1 5rem;
+      display: flex; 
+      gap: .4rem;
+    }
+  }
+}
