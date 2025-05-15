@@ -129,7 +129,7 @@ const Footer = () => {
         }}
         viewport={{ amount: 'all' }}
       >
-        &copy; Copyright - Nak Collections Powered by Codenesta
+        &copy; Copyright - BANOYA COUTURE Powered by Codenesta
       </motion.div>
     </footer>
   );
