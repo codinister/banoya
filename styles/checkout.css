@@ -1,185 +1,373 @@
-.checkout {
-  display: flex;
-  flex-wrap: wrap;
-  margin-block: 4.8rem;
-  & > div {
-    flex: 10rem 1 1;
-    padding-inline: 4rem;
-  }
-  & > div:nth-of-type(1) {
-    border-right: 0.2rem #ccc solid;
-  }
-}
-
-.error-warning {
-  color: red;
-}
-
-.items-box {
-  position: relative;
-  height: 30rem;
-  overflow-y: scroll;
-  & > table {
-    width: 100%;
-  }
-
-  .scroll-box.show {
-    opacity: 1;
-    transition: 0.4s;
-  }
-  .scroll-box.hide {
-    opacity: 0;
-    transition: 0.4s;
-  }
-
-  .scroll-box {
-    opacity: 0;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    background-color: #444;
-    color: white;
-    padding-inline: 1.6rem;
-    padding-block: 0.8rem;
-  }
-
-  & > table tbody tr td:nth-of-type(1) {
-    width: 20%;
-    position: relative;
+@media (min-width: 35em) {
+  .checkout {
+    display: flex;
+    flex-wrap: wrap;
+    margin-block: 4.8rem;
     & > div {
-      height: 7rem;
-      border-radius: 1.2rem;
-      margin-bottom: 1.6rem;
+      flex: 10rem 1 1;
+      padding-inline: 4rem;
+    }
+    & > div:nth-of-type(1) {
+      border-right: 0.2rem #ccc solid;
     }
   }
-  & > table tbody tr td:nth-of-type(2) {
-    width: 60%;
-    padding: 0.8rem;
+
+  .error-warning {
+    color: red;
+  }
+
+  .items-box {
+    position: relative;
+    height: 30rem;
+    overflow-y: scroll;
+    & > table {
+      width: 100%;
+    }
+
+    .scroll-box.show {
+      opacity: 1;
+      transition: 0.4s;
+    }
+    .scroll-box.hide {
+      opacity: 0;
+      transition: 0.4s;
+    }
+
+    .scroll-box {
+      opacity: 0;
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      background-color: #444;
+      color: white;
+      padding-inline: 1.6rem;
+      padding-block: 0.8rem;
+    }
+
+    & > table tbody tr td:nth-of-type(1) {
+      width: 20%;
+      position: relative;
+      & > div {
+        height: 7rem;
+        border-radius: 1.2rem;
+        margin-bottom: 1.6rem;
+      }
+    }
+    & > table tbody tr td:nth-of-type(2) {
+      width: 60%;
+      padding: 0.8rem;
+      & > div:nth-of-type(2) {
+        display: flex;
+        gap: 4rem;
+      }
+    }
+    & > table tbody tr td:nth-of-type(3) {
+      width: 20%;
+      position: relative;
+      & > button {
+        position: absolute;
+        right: 1rem;
+        cursor: pointer;
+        top: 1rem;
+        width: 2rem;
+        height: 2rem;
+        background-color: #444;
+        color: white;
+        display: flex;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .chexbtns {
+    display: flex;
+    & > div:nth-of-type(1) {
+      flex-basis: 10rem;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      & > button {
+        width: 2rem;
+        cursor: pointer;
+      }
+      & > span {
+        padding: 0.4rem;
+      }
+    }
+    & > div:nth-of-type(2) {
+      flex-basis: 30rem;
+      flex-grow: 1;
+      padding-left: 2rem;
+    }
+  }
+
+  .sizes-btn {
+    display: flex;
+    gap: 1.2rem;
+    & > button {
+      cursor: pointer;
+      flex-basis: 3rem;
+      flex-shrink: 1;
+      flex-grow: 0;
+      height: 3rem;
+      outline: none;
+      background-color: #f3f3f3;
+      border: solid 0.2rem #f3f3f3;
+      &:hover {
+        border: solid 0.2rem var(--warning);
+      }
+      &:active {
+        background-color: var(--warning);
+        color: white;
+      }
+    }
+    .btn-active {
+      background-color: var(--warning) !important;
+      color: white;
+    }
+  }
+
+  .totalbox {
+    table {
+      tbody {
+        tr {
+          td:nth-of-type(1) {
+            width: 30%;
+          }
+          td:nth-of-type(2) {
+            width: 50%;
+          }
+          td:nth-of-type(3) {
+            width: 20%;
+          }
+        }
+      }
+    }
+  }
+
+  .checkout-summary {
+    margin-block: 4rem;
+    width: 50%;
+    padding: 4rem;
+    box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.1);
+    margin-inline: auto;
+    table {
+      tr {
+        td {
+          padding: 0.4rem;
+        }
+      }
+    }
+    & > div:nth-of-type(1) {
+      margin-block: 4rem;
+      padding-inline: 1.2rem;
+      color: #666;
+    }
     & > div:nth-of-type(2) {
       display: flex;
-      gap: 4rem;
-    }
-  }
-  & > table tbody tr td:nth-of-type(3) {
-    width: 20%;
-    position: relative;
-    & > button {
-      position: absolute;
-      right: 1rem;
-      cursor: pointer;
-      top: 1rem;
-      width: 2rem;
-      height: 2rem;
-      background-color: #444;
-      color: white;
-      display: flex;
-      border-radius: 50%;
-      justify-content: center;
-      align-items: center;
-      font-size: 1.2rem;
+      gap: 3.2rem;
+      button {
+        background-color: #444;
+        color: white;
+        padding: 1.6rem;
+        border: 0.1rem solid white;
+        &:hover {
+          background-color: white;
+          color: #444;
+          border: 0.1rem solid #666;
+          cursor: pointer;
+        }
+      }
     }
   }
 }
 
-.chexbtns {
-  display: flex;
-  & > div:nth-of-type(1) {
-    flex-basis: 10rem;
-    flex-grow: 1;
+@media (max-width: 35em) {
+  .checkout {
     display: flex;
-    align-items: center;
-    & > button {
-      width: 2rem;
-      cursor: pointer;
+    flex-wrap: wrap;
+    font-size: 1.2rem;
+    margin-block: 4.8rem;
+    & > div {
+      flex: 10rem 1 1;
+      padding-inline: 1.6rem;
     }
-    & > span {
-      padding: 0.4rem;
+    & > div:nth-of-type(1) {
+      border-right: 0.2rem #ccc solid;
     }
   }
-  & > div:nth-of-type(2) {
-    flex-basis: 30rem;
-    flex-grow: 1;
-    padding-left: 2rem;
-  }
-}
 
-.sizes-btn {
-  display: flex;
-  gap: 1.2rem;
-  & > button {
-    cursor: pointer;
-    flex-basis: 3rem;
-    flex-shrink: 1;
-    flex-grow: 0;
-    height: 3rem;
-    outline: none;
-    background-color: #f3f3f3;
-    border: solid 0.2rem #f3f3f3;
-    &:hover {
-      border: solid 0.2rem var(--warning);
-    }
-    &:active {
-      background-color: var(--warning);
-      color: white;
-    }
+  .error-warning {
+    color: red;
   }
-  .btn-active {
-    background-color: var(--warning) !important;
-    color: white;
-  }
-}
 
-.totalbox {
-  table {
-    tbody {
-      tr {
-        td:nth-of-type(1) {
-          width: 30%;
-        }
-        td:nth-of-type(2) {
-          width: 50%;
-        }
-        td:nth-of-type(3) {
-          width: 20%;
-        }
-      }
+  .items-box {
+    position: relative;
+    height: 30rem;
+    overflow-y: scroll;
+    & > table {
+      width: 100%;
     }
-  }
-}
 
-.checkout-summary {
-  
-  margin-block: 4rem;
-  width: 50%;
-  padding: 4rem;
-  box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.1);
-  margin-inline: auto;
-  table{
-    tr{
-      td{
-        padding: .4rem;
-      }
+    .scroll-box.show {
+      opacity: 1;
+      transition: 0.4s;
     }
-  }
-  & > div:nth-of-type(1){
-    margin-block: 4rem;
-    padding-inline: 1.2rem;
-    color: #666;
-  }
-    & > div:nth-of-type(2){
-    display: flex; 
-    gap: 3.2rem; 
-    button{
+    .scroll-box.hide {
+      opacity: 0;
+      transition: 0.4s;
+    }
+
+    .scroll-box {
+      opacity: 0;
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
       background-color: #444;
       color: white;
-      padding: 1.6rem;
-      border: .1rem solid white;
-      &:hover{
-        background-color: white;
-        color: #444;
-         border: .1rem solid #666;
-         cursor: pointer;
+      padding-inline: 1.6rem;
+      padding-block: 0.8rem;
+    }
+
+    & > table tbody tr td:nth-of-type(1) {
+      position: relative;
+      & > div {
+        height: 7rem;
+        width: 7rem;
+        border-radius: 1.2rem;
+        margin-bottom: 1.6rem;
+      }
+    }
+    & > table tbody tr td:nth-of-type(2) {
+      width: 10rem;
+      padding: 0.8rem;
+      & > div:nth-of-type(2) {
+        display: flex;
+        gap: 1.6rem;
+      }
+    }
+    & > table tbody tr td:nth-of-type(3) {
+      width: 10rem;
+      position: relative;
+      padding-top: 2rem;
+      & > button {
+        position: absolute;
+        right: 1rem;
+        cursor: pointer;
+        top: 1rem;
+        width: 2rem;
+        height: 2rem;
+        background-color: #444;
+        color: white;
+        display: flex;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .chexbtns {
+    display: flex;
+    gap: 1rem;
+    & > div:nth-of-type(1) {
+      width: 5rem;
+      display: flex;
+      & > button {
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+      }
+    }
+    & > div:nth-of-type(2) {
+      width: 10rem;
+      padding-left: 0.8rem;
+    }
+  }
+
+  .sizes-btn {
+    display: flex;
+    gap: 0.8rem;
+    & > button {
+      cursor: pointer;
+      flex-basis: 3rem;
+      flex-shrink: 1;
+      flex-grow: 0;
+      height: 2rem;
+      width: 2rem;
+      outline: none;
+      background-color: #f3f3f3;
+      border: solid 0.2rem #f3f3f3;
+      &:hover {
+        border: solid 0.2rem var(--warning);
+      }
+      &:active {
+        background-color: var(--warning);
+        color: white;
+      }
+    }
+    .btn-active {
+      background-color: var(--warning) !important;
+      color: white;
+    }
+  }
+
+  .totalbox {
+    table {
+      tbody {
+        tr {
+          td:nth-of-type(1) {
+            width: 30%;
+          }
+          td:nth-of-type(2) {
+            width: 50%;
+          }
+          td:nth-of-type(3) {
+            width: 20%;
+          }
+        }
+      }
+    }
+  }
+
+  .checkout-summary {
+    margin-block: 4rem;
+    width: 50%;
+    padding: 4rem;
+    box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.1);
+    margin-inline: auto;
+    table {
+      tr {
+        td {
+          padding: 0.4rem;
+        }
+      }
+    }
+    & > div:nth-of-type(1) {
+      margin-block: 4rem;
+      padding-inline: 1.2rem;
+      color: #666;
+    }
+    & > div:nth-of-type(2) {
+      display: flex;
+      gap: 3.2rem;
+      button {
+        background-color: #444;
+        color: white;
+        padding: 1.6rem;
+        border: 0.1rem solid white;
+        &:hover {
+          background-color: white;
+          color: #444;
+          border: 0.1rem solid #666;
+          cursor: pointer;
+        }
       }
     }
   }

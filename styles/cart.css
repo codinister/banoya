@@ -48,16 +48,16 @@
   display: none!important;
 } 
 
+
+
+@media(min-width: 35em){
 .cart-backdrop {
   position: fixed;
   z-index: 9999;
   inset: 0;
   display: none;
 
-
-
    .cart-backdrop-bx {
-  
     background-color: white;
     width: 40%;
     height: 100vh;
@@ -90,4 +90,53 @@
     z-index: 998;
     background-color: rgba(0, 0, 0, 0.2);
   }
+}
+}
+
+
+
+
+
+
+@media(max-width: 35em){
+.cart-backdrop {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  display: none;
+
+   .cart-backdrop-bx {
+    background-color: white;
+    width: 80%;
+    height: 100vh;
+    padding: 1.6rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    box-shadow: 0 0 2rem 2rem rgba(0, 0, 0, 0.1);
+    & > button {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      border: none;
+      left: -10%;
+      z-index: 9999;
+      top: 5rem;
+      background-color: white;
+      cursor: pointer;
+    }
+  }
+
+ .cart-backdrop-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 998;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
 }

@@ -67,8 +67,8 @@ const Nav = () => {
             <Image
               alt="Hamburger"
               src="/hamburger.jpg"
-              width="40"
-              height="40"
+              width="30"
+              height="30"
               className="hamburger"
               onClick={() => setToggle('show')}
             />
@@ -93,6 +93,7 @@ const Nav = () => {
                   alt="logo"
                   width="250"
                   height="70"
+                  onClick={() => setToggle('hide')}
                 />
               </Link>
             ) : (
