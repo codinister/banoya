@@ -78,3 +78,13 @@
     color: white;
   }
 }
+
+
+
+@media(max-width: 35em){
+  .slider {
+      margin-top: 13rem;
+      margin-bottom: 1.6rem;
+
+  }
+}

@@ -16,7 +16,7 @@ export default function Home() {
   useEffect(() => {
     const size = window.innerWidth;
     if (size < 769) {
-      setHeight('60vh');
+      setHeight('25vh');
     }
   }, []);
 
@@ -34,7 +34,7 @@ export default function Home() {
 
   return (
     <>
-      <section>
+      <section className="slider">
         {data.length > 0 ? (
           <Slider data={data} width="100%" height={getHeight} />
         ) : (
