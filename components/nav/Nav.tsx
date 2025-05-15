@@ -62,14 +62,27 @@ const Nav = () => {
       </section>
 
       <nav className="navbar">
-        <Image
-          alt="Hamburger"
-          src="/hamburger.jpg"
-          width="40"
-          height="40"
-          className="hamburger"
-          onClick={() => setToggle('show')}
-        />
+        <div className="mob-nav">
+          <div>
+            <Image
+              alt="Hamburger"
+              src="/hamburger.jpg"
+              width="40"
+              height="40"
+              className="hamburger"
+              onClick={() => setToggle('show')}
+            />
+          </div>
+          <div>
+            <Searchbox />
+          </div>
+
+          <div className="cart-bxu">
+            <span>
+              <Cart />
+            </span>{' '}
+          </div>
+        </div>
 
         <div className={`container nav-box1 ${toggle}`}>
           <div>

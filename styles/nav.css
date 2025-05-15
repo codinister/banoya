@@ -71,7 +71,7 @@
     background-color: var(--white);
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
 
-    .hamburger {
+    .mob-nav {
       display: none;
     }
 
@@ -181,11 +181,50 @@
     top: 0;
     left: 0;
     z-index: 999;
-
     width: 100%;
 
-    .hamburger {
-      margin-left: 1.6rem;
+    .mob-nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 1.6rem;
+      & > div:nth-of-type(2) {
+        width: 25rem;
+        .searchbox {
+          display: flex;
+          gap: 0.8rem;
+          & > div:nth-of-type(1) {
+            position: relative;
+            label {
+              position: absolute;
+              left: 0.8rem;
+              top: 0.8rem;
+              color: #ccc;
+            }
+            input {
+              padding: 0.8rem;
+              border-radius: 0.8rem;
+              border: solid 0.1rem #ccc;
+              padding-left: 3rem;
+              width: 14rem;
+            }
+          }
+
+          & > div:nth-of-type(2) {
+            button {
+              background-color: #f59038;
+              padding: 0.8rem;
+              color: white;
+              border-radius: 1rem;
+
+              border: none;
+            }
+          }
+        }
+      }
+      & > div:nth-of-type(3) {
+        padding-top: 1rem;
+        padding-left: 2.4rem;
+      }
     }
 
     .nav-box1 {
@@ -202,62 +241,41 @@
       & > div:nth-of-type(1) {
         img {
           border-radius: 1.2rem;
+          width: 20rem;
+          height: 8rem;
         }
       }
       & > div:nth-of-type(2) {
+        display: none;
+      }
+      & > div:nth-of-type(3) {
+        & > div:nth-of-type(1) {
+          margin-block: 4rem;
+        }
+        .cart-bxu {
+          display: none;
+        }
         .mobile-contact-box {
-          margin-top: 14rem;
           & > div:nth-of-type(1) {
             display: flex;
             flex-direction: column;
             gap: 1.6rem;
+            margin-bottom: 4rem;
           }
           & > div:nth-of-type(2) {
             display: flex;
-            margin-top: 4rem;
-            gap: 1.6rem;
-            svg {
-              font-size: 2rem;
+            gap: 1.6rm;
+            a {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 3rem;
+              height: 3rem;
+              margin-right: 1.6rem;
+              background-color: #444;
+              color: white;
+              border-radius: 50%;
             }
-          }
-        }
-
-        & > div:nth-of-type(1) {
-          ul {
-            margin-top: 12rem;
-            li {
-              margin-bottom: 4.8rem;
-              .active {
-                background-color: var(--warning);
-                color: var(--white);
-                padding-inline: 1.6rem;
-                padding-block: 1.2rem;
-                border-radius: 0.8rem;
-              }
-              a {
-                color: var(--muted);
-                text-decoration: none;
-                color: var(--muted);
-                padding-inline: 1.6rem;
-                padding-block: 1.2rem;
-                border-radius: 0.8rem;
-                &:hover {
-                  background-color: var(--warning);
-                  color: var(--white);
-                  transition: 0.5s;
-                }
-              }
-            }
-          }
-        }
-
-        & > div:nth-of-type(2) {
-          position: fixed;
-          top: 1rem;
-          right: 1.6rem;
-          z-index: 9991;
-          svg {
-            font-size: 4rem;
           }
         }
       }
