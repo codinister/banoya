@@ -188,16 +188,13 @@
 
 @media (max-width: 35em) {
   .checkout {
-    display: flex;
-    flex-wrap: wrap;
     font-size: 1.2rem;
-    margin-block: 4.8rem;
+    padding: 1.6rem;
     & > div {
-      flex: 10rem 1 1;
-      padding-inline: 1.6rem;
+      padding: 1.6rem;
     }
     & > div:nth-of-type(1) {
-      border-right: 0.2rem #ccc solid;
+      margin-top: 7rem;
     }
   }
 
@@ -236,6 +233,7 @@
 
     & > table tbody tr td:nth-of-type(1) {
       position: relative;
+  
       & > div {
         height: 7rem;
         width: 7rem;

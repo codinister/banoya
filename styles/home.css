@@ -1,90 +1,151 @@
-.home {
-  padding-block: 6.4rem;
-  & > .item-wrapper {
-    h2 {
-      margin-bottom: 3.2rem;
-    }
-    & > div {
-      display: flex;
-      gap: 3.2rem;
-      flex-wrap: wrap;
-      justify-content: center;
+@media (min-width: 35em) {
+  .home {
+    padding-block: 6.4rem;
+    & > .item-wrapper {
+      h2 {
+        margin-bottom: 3.2rem;
+      }
       & > div {
-        flex: 0 1 22rem;
+        display: flex;
+        gap: 3.2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        & > div {
+          flex: 0 1 22rem;
+        }
+      }
+    }
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  }
+
+  .collections {
+    padding-block: 5.6rem;
+    background-color: #f2f2f2;
+    & > .container {
+      h2 {
+        margin-bottom: 3.2rem;
+      }
+      & > div {
+        display: flex;
+        justify-content: center;
+        gap: 3.2rem;
+        flex-wrap: wrap;
+        & > div {
+          background-color: white;
+          flex: 0 1 22rem;
+        }
       }
     }
   }
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-}
 
-.collections {
-  padding-block: 5.6rem;
-  background-color: #f2f2f2;
-  & > .container {
-    h2 {
-      margin-bottom: 3.2rem;
-    }
-    & > div {
+  .services {
+    padding-block: 5.6rem;
+    .container {
       display: flex;
-      justify-content: center;
-      gap: 3.2rem;
       flex-wrap: wrap;
+      gap: 2.4rem;
       & > div {
-        background-color: white;
-        flex: 0 1 22rem;
+        flex: 10rem 1 1;
+        display: flex;
+        & > div:nth-of-type(1) {
+          flex-basis: 30%;
+          svg {
+            font-size: 6.4rem;
+            color: #888;
+          }
+          p {
+            color: #888;
+          }
+        }
+        & > div:nth-of-type(2) {
+          flex-basis: 70%;
+        }
       }
     }
   }
-}
 
-.services {
-  padding-block: 5.6rem;
-  .container {
+  .loading-box {
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
     display: flex;
-    flex-wrap: wrap;
-    gap: 2.4rem;
-    & > div {
-      flex: 10rem 1 1;
-      display: flex;
-      & > div:nth-of-type(1) {
-        flex-basis: 30%;
-        svg{
-          font-size: 6.4rem;
-          color: #888;
-        }
-        p{
-          color: #888;
-        }
-      }
-      & > div:nth-of-type(2) {
-        flex-basis: 70%;
-      }
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+    svg {
+      font-size: 5rem;
+      color: white;
     }
   }
 }
 
-
-.loading-box{
-  position: fixed; 
-  inset: 0; 
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.2);
-  display: flex; 
-  align-items: center;
-  justify-content: center;
-  z-index: 999999;
-  svg{
-    font-size: 5rem;
-    color: white;
-  }
-}
-
-
-
-@media(max-width: 35em){
+@media (max-width: 35em) {
   .slider {
-      margin-top: 13rem;
-      margin-bottom: 1.6rem;
+    margin-top: 13rem;
+    margin-bottom: 1.6rem;
+  }
 
+  .home {
+    padding: 1.6rem;
+    & > .item-wrapper {
+      h2 {
+        margin-bottom: 3.2rem;
+      }
+  
+    }
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  }
+
+  .collections {
+    padding: 1.6rem;
+    background-color: #f2f2f2;
+    & > .container {
+      h2 {
+        margin-bottom: 3.2rem;
+      }
+
+    }
+  }
+
+  .services {
+    padding: 1.6rem;
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.4rem;
+      & > div {
+        flex: 10rem 1 1;
+        display: flex;
+        & > div:nth-of-type(1) {
+          flex-basis: 30%;
+          svg {
+            font-size: 6.4rem;
+            color: #888;
+          }
+          p {
+            color: #888;
+          }
+        }
+        & > div:nth-of-type(2) {
+          flex-basis: 70%;
+        }
+      }
+    }
+  }
+
+  .loading-box {
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+    svg {
+      font-size: 5rem;
+      color: white;
+    }
   }
 }
