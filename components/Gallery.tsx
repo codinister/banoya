@@ -26,7 +26,6 @@ const Gallery = ({ data }: { data: ItemTypes }) => {
 
   const slct = useSelectors();
 
-
   const btn = Object.keys(slct.cart).includes(arr[0]?.id);
 
   const galleryArray: galleryType = arr[0]?.gallery
@@ -40,9 +39,10 @@ const Gallery = ({ data }: { data: ItemTypes }) => {
         title: arr[0]?.title,
         img: arr[0]?.image,
         link: `/single/${arr[0]?.id}`,
-        price: arr[0]?.price,
+        price: Number(arr[0]?.price),
         total: Number(arr[0]?.price),
         size: '',
+        qty: 1,
       },
     };
     dispatch(addToCart(bj));
@@ -77,9 +77,7 @@ const Gallery = ({ data }: { data: ItemTypes }) => {
           {curr} {item_price}
         </h3>
 
-   
-          <ItemSize id={arr[0]?.id} obj={slct.cart} />
-    
+        <ItemSize id={arr[0]?.id} obj={slct.cart} />
 
         <p>Order now, we will ship it within 24 hours!</p>
 

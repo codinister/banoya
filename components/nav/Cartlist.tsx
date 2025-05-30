@@ -18,6 +18,7 @@ const Cartlist = ({ handleHide }: { handleHide: () => void }) => {
     const obj = useSelectors();
   const data = Object.values(obj.cart);
 
+
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const total_items = data.length;
@@ -85,6 +86,8 @@ const Cartlist = ({ handleHide }: { handleHide: () => void }) => {
                 cont
               );
 
+
+
               return (
                 <tr key={k}>
                   <td>
@@ -117,7 +120,7 @@ const Cartlist = ({ handleHide }: { handleHide: () => void }) => {
                   <td>
                     {curr} {item_total}
                     <button
-                      title="Close"
+                      title="Delete"
                       onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                         e.preventDefault();
                         deleteItem(v.id);
