@@ -4,6 +4,9 @@ const getGrandTotal = (
   obj: { currency: string; cart: object },
   cont: { dollar: string; euros: string; pounds: string }[]
 ) => {
+
+
+  console.log(Object.values(obj.cart))
   //console.log(Object.values(obj.cart))
   const total = Object.values(obj.cart).reduce((a, b) => {
     return Number(b.total) + Number(a);

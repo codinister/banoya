@@ -41,6 +41,7 @@ const Gallery = ({ data }: { data: ItemTypes }) => {
         img: arr[0]?.image,
         link: `/single/${arr[0]?.id}`,
         price: arr[0]?.price,
+        total: Number(arr[0]?.price),
         size: '',
       },
     };
