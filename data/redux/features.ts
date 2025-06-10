@@ -45,6 +45,9 @@ const slice = createSlice({
     deleteCustomer(state) {
       state.customer = {};
     },
+        deleteAllCart(state) {
+      state.cart = {};
+    },
     deleteCart(state, payload) {
       state.cart = { ...payload.payload };
       state.total = Object.values(state.cart).reduce((a, b) => {
@@ -66,5 +69,6 @@ export const {
   addLastwatched,
   deleteLastwatched,
   addCustomer,
-  deleteCustomer
+  deleteCustomer, 
+  deleteAllCart
 } = slice.actions;

@@ -6,13 +6,14 @@ const getGrandTotal = (
 ) => {
 
 
-  console.log(Object.values(obj.cart))
+
   //console.log(Object.values(obj.cart))
   const total = Object.values(obj.cart).reduce((a, b) => {
     return Number(b.total) + Number(a);
   }, 0);
-  let curr = 'GH₵';
+  let curr = 'GHS';
   let grandtotal = Number(total);
+  const ceditotal = Number(total);
 
   if (obj.currency === 'dollar') {
     curr = '$';
@@ -27,7 +28,7 @@ const getGrandTotal = (
 
   const grand_total = format_number(String(grandtotal));
 
-  return { curr, grand_total };
+  return { curr, grand_total,ceditotal };
 };
 
 export default getGrandTotal;
