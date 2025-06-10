@@ -50,7 +50,7 @@ const Checkout = () => {
     email: customer?.email,
     currency: 'GHS',
     amount: Number(ceditotal * 100), //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
-    publicKey: process.env.NEXT_PUBLIC_PAYSTACK_KEY || '',
+    publicKey: 'pk_live_86d2df60ee9f3ef0336b8db3cd09ecb92d00a22b',
   };
   const initializePayment = usePaystackPayment(config);
 
